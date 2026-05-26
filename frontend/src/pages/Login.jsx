@@ -545,7 +545,6 @@ const Login = () => {
                     borderColor: darkMode ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'
                   }}
                 >
-                  <h4 style={{ fontSize: '16px', fontWeight: '800', marginBottom: '10px', color: '#2563eb' }}>{st.title}</h4>
                   <h4 style={{ fontSize: '15px', fontWeight: '700', marginBottom: '12px' }}>{card.title}</h4>
                   <p style={{ fontSize: '12px', color: darkMode ? 'rgba(255,255,255,0.6)' : '#475569', lineHeight: '1.5' }}>{card.val}</p>
                 </div>
