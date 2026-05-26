@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
 // @route   POST /api/auth/register
 // @access  Public
 router.post('/register', async (req, res) => {
-  const { name, email, password, role, branch, rollNo, parentEmail } = req.body;
+  const { name, email, password, role, branch, rollNo, parentEmail, phone } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -63,7 +63,8 @@ router.post('/register', async (req, res) => {
         rollNo: rollNo || `ROLL-${Date.now().toString().slice(-4)}`,
         branch: branch || 'MCA',
         parent: parentUser ? parentUser._id : null,
-        parentEmail: parentEmail || ''
+        parentEmail: parentEmail || '',
+        phone: phone || ''
       });
     }
 

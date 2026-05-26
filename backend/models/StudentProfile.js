@@ -27,7 +27,7 @@ const StudentProfileSchema = new mongoose.Schema({
   },
   parentEmail: {
     type: String,
-    required: true
+    default: ''
   },
   phone: {
     type: String,
