@@ -4,11 +4,17 @@ import { Shield, BookOpen, Clock, Users, ArrowRight, CheckCircle, GraduationCap 
 
 const BRANCH_SUGGESTIONS = [
   'MCA (Master of Computer Applications)',
+  'BCA (Bachelor of Computer Applications)',
   'MBA (Master of Business Administration)',
+  'BBA (Bachelor of Business Administration)',
+  'B.Com (Bachelor of Commerce)',
+  'B.E (Bachelor of Engineering)',
+  'Nursing (B.Sc / GNM Nursing)',
   'B.Tech (Computer Science & Engineering)',
   'B.Tech (Information Technology)',
   'B.Tech (Electronics & Communication)',
   'M.Tech (Software Engineering)',
+  'M.Tech (Computer Science)',
   'M.Sc (Computer Science)'
 ];
 
@@ -496,7 +502,11 @@ const Login = () => {
                     .map((branch, idx) => (
                       <div 
                         key={idx}
-                        onClick={() => setRegBranch(branch)}
+                        onMouseDown={(e) => {
+                          e.preventDefault(); // Prevents input blur from executing before state update
+                          setRegBranch(branch);
+                          setBranchFocused(false);
+                        }}
                         style={{
                           padding: '10px 14px',
                           color: 'white',
