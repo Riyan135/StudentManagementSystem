@@ -1,0 +1,27 @@
+# Dependency Directories
+**/node_modules/
+**/dist/
+**/build/
+
+# Local Environment Variables
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Operating System Logs
+**/.DS_Store
+**/Thumbs.db
+**/npm-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# IDE Configurations
+**/.vscode/
+**/.idea/
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
