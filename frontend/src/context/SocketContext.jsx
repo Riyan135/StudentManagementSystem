@@ -11,7 +11,10 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      const newSocket = io('http://localhost:5000');
+      const socketUrl = window.location.origin.includes('localhost') 
+        ? 'http://localhost:5000' 
+        : window.location.origin;
+      const newSocket = io(socketUrl);
       setSocket(newSocket);
 
       newSocket.emit('register', user._id);

@@ -8,7 +8,10 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [notifications, setNotifications] = useState([]);
 
-  const API_URL = 'http://localhost:5000/api';
+  // Check if running on Vercel production or local development
+  const API_URL = window.location.origin.includes('localhost') 
+    ? 'http://localhost:5000/api' 
+    : `${window.location.origin}/api`;
 
   useEffect(() => {
     if (token) {
